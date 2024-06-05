@@ -1,0 +1,531 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header .pnr {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.section {
+  margin: 20px 0;
+}
+
+.section h2 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.section p {
+  margin: 5px 0;
+}
+
+.section .info {
+  font-weight: bold;
+}
+
+.ratings {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rating {
+  text-align: center;
+}
+.App{
+  border: solid black 2px;
+
+}
+.container{
+  border: solid black 2px;
+  margin: auto;
+}
+.App {
+  text-align: center;
+}
+
+.form {
+  width: 30rem;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+}
+
+th {
+  background-color: grey;
+}
+
+tr:nth-child(even) {
+  background-color: grey;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+.heading{
+  color: red;
+  text-align: center;
+}
+/* src/RouteInfo.css */
+.route-info {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.route-info h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.route-info table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.route-info th, .route-info td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.route-info th {
+  background-color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Navbar styles */
+/* App.css */
+
+/* General styles */
+/* App.css */
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1c1c1c;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Heading styles */
+.heading {
+  color: #ff8c00;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 3rem;
+  animation: fadeIn 2s;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #333 !important;
+}
+
+.navbar-brand {
+  color: #e0e0e0 !important;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #e0e0e0 !important;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #ff8c00 !important;
+}
+
+/* Button styles */
+.nav-item button {
+  background-color: #333;
+  color: #e0e0e0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.nav-item button:hover {
+  background-color: #ff8c00;
+  color: #333;
+}
+
+/* User greeting styles */
+.collapse p {
+  color: #ff8c00;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.collapse img {
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+/* Services section styles */
+.text-center {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.text-center h3, .text-center h4 {
+  color: #ff8c00;
+  margin-bottom: 20px;
+}
+
+.text-center ul {
+  list-style: none;
+  padding: 0;
+}
+
+.text-center ul li {
+  background-color: #333;
+  color: #e0e0e0;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.text-center ul li:hover {
+  transform: scale(1.05);
+  background-color: #ff8c00;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* App.css */
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Heading styles */
+.heading {
+  color: #ff6347;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 3rem;
+  animation: fadeIn 2s;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #4682b4 !important;
+}
+
+.navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #fff !important;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #ff6347 !important;
+}
+
+/* Button styles */
+.nav-item button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.nav-item button:hover {
+  background-color: #ff4500;
+}
+
+/* User greeting styles */
+.navbar-text {
+  color: #f0f8ff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-text img {
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+/* Services section styles */
+.text-center {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.text-center h3, .text-center h4 {
+  color: #4682b4;
+  margin-bottom: 20px;
+}
+
+.text-center ul {
+  list-style: none;
+  padding: 0;
+}
+
+.text-center ul li {
+  background-color: #ff6347;
+  color: #fff;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.text-center ul li:hover {
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* App.css */
+
+/* General styles */
+/* App.css */
+
+/* General styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1a1a2e;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container styles */
+.App {
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #e94560;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+/* Form styles */
+.form {
+  margin-bottom: 20px;
+}
+
+.form select, .form button {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.form select {
+  background-color: #16213e;
+  color: #e94560;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.form select:hover {
+  background-color: #e94560;
+  color: #16213e;
+}
+
+.form button {
+  background-color: #e94560;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form button:hover {
+  background-color: #ba2d65;
+}
+
+/* Loading and error messages */
+.loading, .error {
+  color: #e94560;
+  font-size: 1.2rem;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+thead {
+  background-color: #16213e;
+}
+
+thead th {
+  padding: 10px;
+  color: #e94560;
+  font-size: 1.1rem;
+}
+
+tbody tr {
+  background-color: #2e2e48;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+tbody tr:hover {
+  background-color: #3e3e5e;
+}
+
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #16213e;
+}
+
+/* Button styles inside table */
+.btn-dark {
+  background-color: #e94560;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-dark:hover {
+  background-color: #ba2d65;
+}
+
+/* Information bar styles */
+.information-bar {
+  background-color: #0f3460;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.information-bar h4 {
+  margin-bottom: 10px;
+  color: #e94560;
+}
+
+.information-bar td {
+  padding: 5px 10px;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
