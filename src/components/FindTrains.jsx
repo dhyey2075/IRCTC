@@ -13,6 +13,13 @@ const App = () => {
   const [tr, setTr] = useState(null);
   const [route, setRoute] = useState(null)
   const { loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
+  const [show, setShow] = useState(false)
+  const [search, setSearch] = useState("")
+
+    
+  window.onload = function(){
+    setShow(false)
+  }
 
   const [stations, setStations] = useState([
     "ST", "ADI", "BRC", "NVS", "RJT", "ANND", "VAPI", "ND", "BH", "BL", "PNU", "AKV", "JAM", "UDN", "BIM", "GIMB", "BHUJ", "VG", "MSH", "DHD", "SUNR", "SIOB", "MAN", "MHD", "BTD", "DWK", "KSB", "MYG", "JND", "KIM", "VRL", "UVD", "UBR", "BVC", "PBR", "GDA", "WKR", "HAPA", "SBIB", "BCOB", "CYI", "KMBL", "UJA", "DHG", "SID", "GDL", "THAN", "JLR", "BKNG", "BLDI", "KSD", "DRL", "PLJ", "AI", "VRR", "MALB", "AML", "WSJ", "AJE", "CLDY", "MLHA", "NUD", "MRL", "DISA", "HVD", "SBT", "RDHP", "LMK", "PDH", "KBRV", "BHTA", "BNVD", "VS", "BJD", "VDA", "SNLR", "LPJ", "DEOR", "ABD", "PAD", "KLL", "NIU", "PAO", "BLD", "PPD", "SMLA", "CVR", "SAU", "GNC", "SJN", "AAR", "SAT", "LTR", "JDH", "MTHP", "RWO", "BAH", "CHP", "SYN", "UA", "ITA", "VRX", "KHDB", "LKZ", "PDF", "DL", "KEMA", "JKA", "GOP", "BMSB", "BIO", "MOL", "PLM", "ANAS", "RUT", "CPN", "GTT", "DJI", "CE", "BHY", "SKR", "BDDR", "PFL", "BJW", "COE", "KRSA", "WAB", "MAM", "RNO", "JDN", "OKHA", "SMNH", "DLJ", "SRGT", "SOJN", "JVN", "VYA", "DQN", "SGD", "SVKD", "LMO", "LM", "RLA", "DAS", "SCH", "BVP", "WC", "BHET", "WTJ", "BIY", "DGI", "MVI", "RUR", "PTN", "CHM", "KNLS", "SOA", "VTJ", "NGA", "ALB", "UJ", "MID", "ALMR", "ACL", "GNST", "JRS", "VDH", "ATUL", "CDA", "LTD", "BJUD", "KDMR", "KSE", "KDI", "GER", "KMLI", "BUBR", "TBV", "NZG", "MDRA", "KSUA", "KTAL", "SDHR", "SDGM", "ADD", "SYQ", "KTNA", "CASA", "VTA", "JUL", "VJK", "SHLV", "VVV", "SNSN", "CBCC", "KDSD", "KVNJ", "BILK", "BKRL", "CHIB"
@@ -64,10 +71,15 @@ const App = () => {
     sessionStorage.setItem("trainNo", tNo)
     navigate("/getroute")
   }
+  const handleChange = (e)=>{
+    console.log(e.target.value)
+    setSearch(e.target.value)
+  }
 
   return isAuthenticated ? (
     <><div className="App">
     <h1>Train Schedule</h1>
+    
     <div className="form">
       <select name="from" id="from" className="mx-2 p-1" onChange={(e) => setFromStation(e.target.value)}>
         <option value="">FROM</option>
@@ -79,7 +91,7 @@ const App = () => {
       </select>
       <button onClick={handleSearch}>Search</button>
     </div>
-    {loading && <p>Fetching Trains...</p>}
+    {loading && <><img height="50px" src='../../loader.gif'/><p>Finding trains.....</p></>}
     {error && <p className="error">{error}</p>}
     {!loading && trains.length > 0 && (
       <table>
@@ -96,46 +108,49 @@ const App = () => {
           </tr>
         </thead>
         <tbody>
-          {trains.map((train, index) => (
-            <React.Fragment key={train.train_base.train_no}>
-              <tr onClick={() => handleTrainClick(train.train_base.train_no)}>
-                <td>{train.train_base.train_no}</td>
-                <td>{train.train_base.train_name}</td>
-                <td>{train.train_base.from_stn_name}</td>
-                <td>{train.train_base.to_stn_name}</td>
-                <td>{train.train_base.from_time}</td>
-                <td>{train.train_base.to_time}</td>
-                <td>{train.train_base.travel_time}</td>
-                <td>{formatDays(train.train_base.running_days)}</td>
-                <td><button className='btn btn-dark' onClick={() => getRoute(train.train_base.train_no)}>Get Route</button></td>
-              </tr>
-              {tr && tr.data && tr.data.train_no === train.train_base.train_no && (
-                <tr>
-                  <td colSpan="8">
-                    <div className="information-bar">
-                      <tr>
-                        <td colSpan="8">
-                          <div className="information-bar">
-                            <h4>Train Info:</h4>
-                            <td>Train No: {tr.data.train_no}</td>
-                            <td>Train Name: {tr.data.train_name}</td>
-                            <td>From: {tr.data.from_stn_name}</td>
-                            <td>To: {tr.data.to_stn_name}</td>
-                            <td>Type: {tr.data.type}</td>
-                            <td>Distance: {tr.data.distance_from_to}</td>
-                            <td>Average Speed: {tr.data.average_speed}</td>
-                          </div>
-                        </td>
-                      </tr>
-                    </div>
-                  </td>
-                </tr>
-              )}
-            </React.Fragment>
+        {trains.filter((name) => name.train_base.train_name.includes(search)).map((train, index) => (
+  <React.Fragment key={train.train_base.train_no}>
+    <tr onClick={() => handleTrainClick(train.train_base.train_no)}>
+      <td>{train.train_base.train_no}</td>
+      <td>{train.train_base.train_name}</td>
+      <td>{train.train_base.from_stn_name}</td>
+      <td>{train.train_base.to_stn_name}</td>
+      <td>{train.train_base.from_time}</td>
+      <td>{train.train_base.to_time}</td>
+      <td>{train.train_base.travel_time}</td>
+      <td>{formatDays(train.train_base.running_days)}</td>
+      <td><button style={{width:"100px"}} className='btn btn-dark' onClick={() => getRoute(train.train_base.train_no)}>Get Route</button></td>
+    </tr>
+    {tr && tr.data && tr.data.train_no === train.train_base.train_no && (
+      <tr>
+        <td colSpan="8">
+          <div className="information-bar">
+            <tr>
+              <td colSpan="8">
+                <div className="information-bar">
+                  <h4>Train Info:</h4>
+                  <td>Train No: {tr.data.train_no}</td>
+                  <td>Train Name: {tr.data.train_name}</td>
+                  <td>From: {tr.data.from_stn_name}</td>
+                  <td>To: {tr.data.to_stn_name}</td>
+                  <td>Type: {tr.data.type}</td>
+                  <td>Distance: {tr.data.distance_from_to}</td>
+                  <td>Average Speed: {tr.data.average_speed}</td>
+                </div>
+              </td>
+            </tr>
+          </div>
+        </td>
+      </tr>
+    )}
+  </React.Fragment>
           ))}
         </tbody>
       </table>
+      
     )}
+    <label htmlFor="search Train">Search Train By Name: </label>
+    <input onChange={(e)=>handleChange(e)} type="text" />
   </div></>
 
 
@@ -143,7 +158,7 @@ const App = () => {
 
 
 
-  ) : <><h3>404 - (Access denied)    Please login or sign up to find trains</h3></>;
+  ) : (show && <><h3>404 - (Access denied)    Please login or sign up to find trains</h3></>)
 };
 
 export default App;

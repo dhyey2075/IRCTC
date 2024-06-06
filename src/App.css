@@ -1,13 +1,13 @@
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
   color: #333;
-  margin: 0;
+  margin: 30px;
   padding: 20px;
 }
 
 .container {
-  max-width: 800px;
   margin: auto;
   background: #fff;
   padding: 20px;
@@ -123,7 +123,17 @@ tr:hover {
   background-color: grey;
 }
 
+.flax{
+  display: flex;
+  align-items: center;
+}
 
+.pos{
+  position: relative;
+  top: -7px;
+  left: 0px;
+  margin-right: 6px;
+}
 
 
 

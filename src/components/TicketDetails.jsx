@@ -9,6 +9,12 @@ function TicketDetails() {
   const [flag, setFlag] = useState(false);
   const [error, setError] = useState("");
   const { loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
+  const [show, setShow] = useState(false)
+
+    
+    window.onload = function(){
+      setShow(true)
+    }
 
 
   useEffect(() => {
@@ -161,7 +167,6 @@ function TicketDetails() {
         </>
       )}
     </div>
-  ) : <><h3>404 - (Access denied)    Please login or sign up to find trains</h3></>;
+  ) : (show && <><h3>404 - (Access denied)    Please login or sign up to find trains</h3></>)
 }
-
 export default TicketDetails;
