@@ -69,7 +69,7 @@ body {
 }
 
 .form {
-  width: 30rem;
+  width: 50rem;
   margin-bottom: 20px;
 }
 
@@ -396,7 +396,7 @@ body {
 /* Container styles */
 .App {
   text-align: center;
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: auto;
 }
@@ -539,3 +539,13 @@ tbody td {
   }
 }
 
+.list{
+  color: #d54060;
+  font-size: larger;
+  max-height: 10rem;
+  overflow: auto;
+}
+.list ul{
+  list-style: none;
+  padding: 0;
+}
