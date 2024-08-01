@@ -44,7 +44,7 @@ function TicketDetails() {
   const fetchPNR = async (pnr) => {
     if (error === "") {
       try {
-        let url = `https://1n323595-3000.inc1.devtunnels.ms/trains/pnrstatus?pnr=${pnr}`;
+        let url = `https://railapi-gz1l.onrender.com/trains/pnrstatus?pnr=${pnr}`;
         let res = await fetch(url, { method: "GET" });
         if (!res.ok) {
           throw new Error("Network response was not ok");

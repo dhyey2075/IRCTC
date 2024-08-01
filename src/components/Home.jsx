@@ -66,7 +66,7 @@ const Home = (props) => {
         <li>Check PNR Status</li>
       </ul>
       {!isAuthenticated && <><h3>Login To avail our service</h3><br /> <br /> <br /></>}
-      <h4>You can login using <img height="30px" src="/google.png" alt="" />, <img height="30px" src="/github.png" alt="" /> and <img height="30px" src="/public/732221.png" alt="" /></h4>
+      <h4>You can login using <img height="30px" src="/google.png" alt="" />, <img height="30px" src="/github.png" alt="" /> and <img height="30px" src="/732221.png" alt="" /></h4>
     </div>
   </div>
   );
